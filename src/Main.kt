@@ -44,4 +44,11 @@ fun main() {
         "no"
     }
     println("La cadena $cadena $si_no es un palíndromo")
+
+    println("")
+    val lista_nombres = listOf("Diego", "Javier", "Juan", "Ana", "José")
+    val map = lista_nombres.map{"¡Hola, $it! \n"}
+    println("Saludos: \n $map")
+
+    println("")
 }
