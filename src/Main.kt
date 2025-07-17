@@ -4,11 +4,22 @@
 
 //Función para calcular el promedio
 fun calcularPromedio(numeros: List<Double>): Double{
-    if (numeros.isEmpty()){
-        throw IllegalArgumentException("La lista no puede estar vacía")
-    }
     val suma = numeros.reduce{a, b -> a + b}
     return suma / numeros.size
+}
+
+//Función para determinar palíndromo
+fun esPalindromo(cadena: String): Boolean{
+    var inicio = 0
+    var final = cadena.length - 1
+    while (inicio < final){
+        if (cadena[inicio] != cadena[final]){
+            return false
+        }
+        inicio++
+        final--
+    }
+    return true
 }
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -22,4 +33,15 @@ fun main() {
     val numeros = listOf(1,4,2,6,8,3,7,34,78,22,43,65,23)
     val impares = numeros.filter {it % 2 == 1}
     println("Números impares: $impares")
+
+    println("")
+    val cadena = "abba"
+    val palindromo = esPalindromo(cadena)
+    val si_no =
+    if (palindromo){
+        "si"
+    } else {
+        "no"
+    }
+    println("La cadena $cadena $si_no es un palíndromo")
 }
