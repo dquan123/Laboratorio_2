@@ -21,6 +21,11 @@ fun esPalindromo(cadena: String): Boolean{
     }
     return true
 }
+
+//Función para ejecutar operaciones
+fun performOperation(a: Int, b: Int, o: (Int, Int) -> Double): Double{
+    return o(a, b)
+}
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -51,4 +56,12 @@ fun main() {
     println("Saludos: \n $map")
 
     println("")
+    val suma = performOperation(12,25){ a, b -> (a + b).toDouble()}
+    val resta = performOperation(12,25){ a, b -> (a - b).toDouble()}
+    val mul = performOperation(12,25){ a, b -> (a * b).toDouble()}
+    val div = performOperation(12,25){ a, b -> (a.toDouble() / b)}
+    println("Suma $suma")
+    println("Resta $resta")
+    println("Multiplicación $mul")
+    println("División $div")
 }
