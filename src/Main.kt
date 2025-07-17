@@ -26,6 +26,15 @@ fun esPalindromo(cadena: String): Boolean{
 fun performOperation(a: Int, b: Int, o: (Int, Int) -> Double): Double{
     return o(a, b)
 }
+
+//Clases para el último ejercicio
+data class Person(val name: String, val age: Int, val gender: String)
+data class Student(val name: String, val age: Int, val gender: String, val studentId: String)
+
+//Función de mapeo para estudiantes
+fun mapPersonToStudent(person: Person, studentId: String): Student {
+    return Student(person.name, person.age, person.gender, studentId)
+}
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -64,4 +73,9 @@ fun main() {
     println("Resta $resta")
     println("Multiplicación $mul")
     println("División $div")
+
+    println("")
+    val persona = Person("Diego", 19, "Masculino")
+    val estudiante = mapPersonToStudent(persona, "DQ123")
+    println("El estudiante ${estudiante.name} tiene ${estudiante.age} años, es del género ${estudiante.gender} y su ID es ${estudiante.studentId}")
 }
